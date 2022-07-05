@@ -1,62 +1,78 @@
 ![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-informational)
 [![Python](https://img.shields.io/badge/Python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-informational)](https://www.python.org/)
-[![Qiskit](https://img.shields.io/badge/Qiskit-%E2%89%A5%200.34.2-6133BD)](https://github.com/Qiskit/qiskit)
-[![License](https://img.shields.io/github/license/IBM-Quantum-prototypes/quantum-prototype-template?label=License)](https://github.com/IBM-Quantum-prototypes/quantum-prototype-template/blob/main/LICENSE.txt)
+[![Qiskit](https://img.shields.io/badge/Qiskit-Latest-6133BD)](https://github.com/Qiskit/qiskit)
+[![License](https://img.shields.io/github/license/qiskit-community/subgraph-isomorphism?label=License)](LICENSE.txt)
 [![Code style: Black](https://img.shields.io/badge/Code%20style-Black-000.svg)](https://github.com/psf/black)
-[![Tests](https://github.com/IBM-Quantum-prototypes/quantum-prototype-template/actions/workflows/test_latest_versions.yml/badge.svg)](https://github.com/IBM-Quantum-prototypes/quantum-prototype-template/actions/workflows/test_latest_versions.yml)
-[![Coverage](https://coveralls.io/repos/github/qiskit-community/quantum-prototype-template/badge.svg?branch=main)](https://coveralls.io/github/qiskit-community/quantum-prototype-template?branch=main)
 
-# Quantum Prototype Template
+<!-- ABOUT THIS PROJECT -->
 
-This template repository is a tool for creating Python projects quickly by providing much of the necessary boilerplate code. The code examples in this template repository are written in accordance with pylint style checks, and the sample `prototype_template` module has an associated unit test module. We have also included examples of coverage testing, notebook tests, and notebook lint checks and wrapped all of these using [tox](https://github.com/tox-dev/tox) automated testing software.
+# A quantum algorithm for the subgraph isomorphism problem.
 
-We encourage you to use this template repository to begin your own research projects!
 
+<!-- TABLE OF CONTENTS -->
 ### Table of Contents
+* [Tutorials](docs)
+* [About This Project](#about-this-project)
+* [How to Give Feedback](#how-to-give-feedback)
+* [Contribution Guidelines](#contribution-guidelines)
+* [Acknowledgements](#acknowledgements)
+* [References](#references)
+* [License](#license)
 
-##### For Users
+---
 
-1.  [About the Project](docs/project_overview.md)
-2.  [Beginner's Guide](docs/beginners_guide.md)
-3.  [Installation](docs/installation_guide.md)
-4.  [Quickstart Guide](docs/quickstart_guide.md)
-5.  [Tutorials](docs/tutorials/example_tutorial.ipynb)
-6.  [How-Tos](docs/how_tos/example_how_to.ipynb)
-7.  [Prototype Template File Glossary](docs/file-map-and-description.md)
-8.  [How to Give Feedback](#how-to-give-feedback)
-9.  [Contribution Guidelines](#contribution-guidelines)
-10. [References and Acknowledgements](#references-and-acknowledgements)
-11. [License](#license)
+### About This Project
 
-##### For Developers/Contributors
+The present work is a Qiskit-based implementation of a method for solving the sub-graph isomorphism problem on a gate-based quantum computer.
+The method relies on a new representation of the adjacency matrices of the underlying graphs and it requires a number of qubits that scales **logarithmically** with the number of vertices of the graphs.
+Given two undirected graphs A and B (the former with equal or larger number of vertices than the latter), the sub-graph isomorphism problem is the problem of finding occurrences of graph B into graph A.
+If the two graphs have the same number of vertices, then the problem is known as graph isomorphism, which is therefore a special case.
+More details can be found in the following paper [[1]](#references).
+The sub-graph isomorphism problem has numerous applications when data can be represented as networks, and notably in graph databases, biochemistry, computer vision, social network analysis, knowledge graph query, among many others.
 
-1. [Contribution Guide](CONTRIBUTING.md)
-2. [Technical Docs](docs/technical_docs.md)
+<figure>
+<center>
+<img src="docs/images/fig1.png" alt="Figure 1" width="500"/>
+<figcaption align = "center">Fig. 1 - The concept of subgraph isomorphism.</figcaption>
+</figure>
 
+The main demo, which also manages the requirements, is located [here](docs/subgraph-isomorphism-demo.ipynb). A brief 
+overview of the problem, proposed solution and some results can be found in the [poster](docs/poster.pdf) presented
+at the European Quantum Technology Conference, Nov 29th - Dec 2nd, 2021, Dublin, Ireland.
 
-----------------------------------------------------------------------------------------------------
+---
 
+<!-- HOW TO GIVE FEEDBACK -->
 ### How to Give Feedback
-
 We encourage your feedback! You can share your thoughts with us by:
-- [Opening an issue](https://github.com/IBM-Quantum-prototypes/quantum-prototype-template/issues) in the repository
+- [Opening an issue](https://github.com/qiskit-community/subgraph-isomorphism/issues) in the repository
+- [Starting a conversation on GitHub Discussions](https://github.com/qiskit-community/subgraph-isomorphism/discussions)
 
+---
 
-----------------------------------------------------------------------------------------------------
-
+<!-- CONTRIBUTION GUIDELINES -->
 ### Contribution Guidelines
+For information on how to contribute to this project, please take a look at [CONTRIBUTING.MD](CONTRIBUTING.md).
 
-For information on how to contribute to this project, please take a look at our [contribution guidelines](CONTRIBUTING.md).
+---
 
+<!-- ACKNOWLEDGEMENTS -->
+### Acknowledgements
+This module is based on the theory and experiment described in [[1]](#references).
 
-----------------------------------------------------------------------------------------------------
+The code on which this module is based was written by Nicola Mariella.
 
-## References and Acknowledgements
-[1] Diátaxis Technical Documentation Framework \
-    https://diataxis.fr/
+We are highly thankful to Dr. Andrea Simonetto, 
+Dr. Claudio Gambella (both were at IBM Research Europe - Dublin), 
+Dr. Martin Mevissen (IBM Research Europe - Dublin)
+and Prof. Jiri Vala (Maynooth University - Dep. of Theoretical Physics) for their precious suggestions.
 
+---
 
-----------------------------------------------------------------------------------------------------
+<!-- REFERENCES -->
+### References
+[1] Nicola Mariella, Andrea Simonetto, *A Quantum Algorithm for the Sub-Graph Isomorphism Problem*, https://arxiv.org/abs/2111.09732
 
+<!-- LICENSE -->
 ### License
 [Apache License 2.0](LICENSE.txt)
