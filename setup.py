@@ -1,5 +1,3 @@
-"""Setup file for prototype template."""
-
 import setuptools
 
 with open("README.md", encoding="utf-8") as f:
@@ -9,8 +7,9 @@ with open("requirements.txt") as f:
     install_requires = f.read().splitlines()
 
 setuptools.setup(
-    name="prototype_template",
-    description="Repository for a quantum prototype",
+    name="subgraph_isomorphism",
+    version="0.1",
+    description="A quantum algorithm for the subgraph isomorphism problem",
     long_description=long_description,
     packages=setuptools.find_packages(),
     install_requires=install_requires,
