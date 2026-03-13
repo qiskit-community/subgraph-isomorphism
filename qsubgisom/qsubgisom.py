@@ -123,7 +123,7 @@ def observable(n: int) -> SparsePauliOp:
     obs0 = (SparsePauliOp("Z") + SparsePauliOp("I")) / 2
     obs_final = obs0
     for _ in range(n - 1):
-        obs_final = obs_final.tensor(obs0) 
+        obs_final = obs_final.tensor(obs0)
     return -obs_final
 
 
